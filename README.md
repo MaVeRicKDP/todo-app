@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+ToDo App-ReactJS
+ToDo App created from basic ReactJS and Vanila CSS!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🛠 Skills
+React,Javascript, HTML, CSS...
 
-## Available Scripts
+Features
+Task Creation Add new tasks with an intuitive form and save them to the task list.
 
-In the project directory, you can run:
+Task Deletion Easily remove tasks using the delete button.
 
-### `npm start`
+Task Completion Toggle Mark tasks as complete or incomplete — updates the UI accordingly (likely with strikethrough styling).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Inline Task Editing Edit a task directly in the list — switches between Todo and EditTodoForm dynamically.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Conditional Rendering Smart UI that renders either the task or the edit form based on state (isEditing).
 
-### `npm test`
+UUID-based Unique Task IDs Ensures each task has a unique identifier using uuidv4().
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Functional Components with Hooks Built with modern React features like useState.
 
-### `npm run build`
+Clean Modular Structure Separated components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+TodoWrapper – Main logic/controller
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+TodoForm – New task input
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+EditTodoForm – Edit existing task
 
-### `npm run eject`
+Todo – Display individual task
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+State-Preserving Updates Efficient task updates and deletes using array methods (map, filter).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dynamic Headline Motivational h1 title: "Let's Plan your Day!"
