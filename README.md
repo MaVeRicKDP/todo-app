@@ -1,26 +1,26 @@
 # 📝 Categorized Todo App
 
-A sleek, intuitive Todo application built with **React.js** that helps you manage your daily tasks by categorizing them into three distinct statuses: **Incompleted**, **In Progress**, and **Completed**. This app emphasizes usability, responsiveness, and data persistence.
+A sleek and intuitive Todo application built with **React.js** that helps you manage your tasks by categorizing them into three statuses: **Incompleted**, **In Progress**, and **Completed**. Built with a strong focus on user experience, responsiveness, and persistent data.
 
 ---
 
 ## 🚀 Features
 
-- **Add, Edit, Delete Tasks:** Easily create new tasks, update existing ones, or remove completed or unwanted tasks.
-- **Task Status Management:** Click tasks to cycle through statuses—Incompleted → In Progress → Completed—providing a clear workflow.
-- **Filter Tasks:** Quickly filter and view tasks based on their status to stay focused.
-- **Dark Mode:** Toggle between light and dark themes for comfortable viewing in any environment.
-- **Persistent Storage:** Tasks are saved to your browser’s LocalStorage, so your data remains intact between sessions.
-- **Responsive Design:** Looks great and functions smoothly on all screen sizes.
+- ✅ Add, Edit, and Delete tasks
+- 🔄 Cycle through task statuses (Incompleted → In Progress → Completed)
+- 🔍 Filter tasks by status for focused views
+- 🌙 Light/Dark mode toggle for user preference
+- 💾 Saves tasks to browser’s **LocalStorage** for persistence
+- 📱 Fully responsive design
 
 ---
 
 ## 🛠 Tech Stack
 
-- **React.js** – Frontend library for building user interfaces.
-- **UUID** – For generating unique IDs for tasks.
-- **Font Awesome** – Icon library used for status and action icons.
-- **CSS** – Custom styling with modern design principles.
+- **React.js** – Frontend library
+- **UUID** – For unique task IDs
+- **Font Awesome** – Icons for task actions and status
+- **CSS** – Custom styling
 
 ---
 
@@ -28,10 +28,11 @@ A sleek, intuitive Todo application built with **React.js** that helps you manag
 
 ### Prerequisites
 
-- Node.js and npm installed on your machine.
+- Node.js and npm installed
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repo:
+
    ```bash
    git clone https://github.com/MaVeRicKDP/todo-app.git
