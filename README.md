@@ -36,3 +36,6 @@ A sleek and intuitive Todo application built with **React.js** that helps you ma
 
    ```bash
    git clone https://github.com/MaVeRicKDP/todo-app.git
+
+## Live Demo  
+Try the app live here: [https://todo.dipeshpoudel.info.np/](https://todo.dipeshpoudel.info.np/)
