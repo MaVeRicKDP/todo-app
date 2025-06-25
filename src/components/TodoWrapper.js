@@ -15,7 +15,7 @@ export const TodoWrapper = () => {
     setTodos(savedTodos);
   }, []);
 
-  // Save todos to localStorage whenever they change
+  // Save todos to localStorage whenever todos change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -105,13 +105,14 @@ export const TodoWrapper = () => {
             No tasks found for "{filter}" status.
           </p>
         ) : (
-          filteredTodos.map((todo) =>
+          filteredTodos.map((todo, index) =>
             todo.isEditing ? (
               <EditTodoForm key={todo.id} task={todo} editTodo={editTask} />
             ) : (
               <Todo
                 key={todo.id}
                 task={todo}
+                index={index} // Pass the index to Todo
                 deleteTodo={deleteTodo}
                 editTodo={editTodo}
                 toggleStatus={toggleStatus}

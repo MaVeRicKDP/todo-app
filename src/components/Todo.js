@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faTimesCircle, faClock } from '@fortawesome/free-solid-svg-icons'
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-export const Todo = ({ task, deleteTodo, editTodo, toggleStatus }) => {
+export const Todo = ({ task, deleteTodo, editTodo, toggleStatus, index }) => {
   // icon based on status
   const statusIcon = () => {
     switch (task.status) {
@@ -26,7 +26,8 @@ export const Todo = ({ task, deleteTodo, editTodo, toggleStatus }) => {
         onClick={() => toggleStatus(task.id)}
         style={{ cursor: "pointer", marginRight: "10px" }}
       />
-      <p>{task.task}</p>
+      {/* Show number prefix here */}
+      <p>{`Task ${index + 1}: ${task.task}`}</p>
       <div>
         <FontAwesomeIcon
           className="edit-icon"
