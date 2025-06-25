@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 * {
   font-family: "Poppins", sans-serif;
@@ -11,7 +11,9 @@ body {
   background: #8758ff;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
 .App {
@@ -19,130 +21,266 @@ body {
 }
 
 h1 {
-  color: #3746baf8;
-  margin-bottom: 0.5rem;
-  font-size: 1.75rem;
-  cursor: default;
+  color: #00b3ff; /* Sky Blue */
+  font-size: 2rem;
+  font-weight: 600;
   pointer-events: none;
   user-select: none;
+  margin: 0;
 }
 
 .TodoWrapper {
-  background-color: #f0f0f0;
+  background-color: #f8f8f8;
   color: #222;
   padding: 40px 30px;
-  margin: 60px auto;
-  border-radius: 12px;
+  margin-top: 20px;
+  border-radius: 16px;
   max-width: 700px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .TodoWrapper.dark {
-  background-color: #121212;
+  background-color: #1e1e1e;
   color: #eee;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  text-align: center;
   margin-bottom: 25px;
 }
 
 .dark-toggle {
-  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2rem;
+  padding: 5px 10px;
   border: none;
-  font-size: 1rem;
+  background: none;
+  color: inherit;
+  border-radius: 8px;
+  transition: background 0.2s ease;
   cursor: pointer;
-  padding: 3px 3px;
-  border-radius: 10px;
-  margin-right: 10px;
-  cursor: default;
-  user-select: none;
 }
 
 .dark-toggle:hover {
-  background: rgba(0, 0, 0, 0.05);
-  cursor: default;
-  user-select: none;
+  background: rgba(255, 255, 255, 0.07);
 }
 
+/* Form and input styles */
 .TodoForm {
   width: 100%;
   margin-bottom: 1rem;
-  user-select: none;
+  text-align: center;
 }
 
 .todo-input {
   outline: none;
-  background: none;
+  background: #fff;
   border: 1px solid #00b3ff;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 300px;
-  color: #56dd08;
+  width: 100%;
+  max-width: 400px;
+  color: #333;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.todo-input:focus {
+  border-color: #56dd08;
+  box-shadow: 0 0 0 2px rgba(86, 221, 8, 0.2);
 }
 
 .todo-input::placeholder {
-  color: #ea6e00;
+  color: #999;
+}
+
+.input-warning {
+  border-color: #f5a623; /* amber */
+  background-color: #fff8e1; /* light yellow */
+  color: #a05d00;
+}
+
+.warning-text {
+  color: #f5a623; /* amber */
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .TodoBtn {
-  background: #8758ff;
-  color: #252222;
+  background: #56dd08;
+  color: #fff;
   border: none;
-  padding: 0.55rem;
+  padding: 0.55rem 1.2rem;
   cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 1rem;
+  transition: 0.3s ease;
 }
 
+.TodoBtn:hover {
+  background: #42b505;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+/* Todo styles */
 .Todo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #8758ff;
-  color: #fff;
   padding: 0.75rem 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   margin-bottom: 1rem;
   user-select: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+  color: inherit;
 }
 
-.fa-trash {
-  margin-left: 0.75rem;
+/* Status based colors and borders */
+.Todo.completed {
+  background-color: #d1f5d3;
+  color: #2e7d32;
+  border-left: 5px solid #4caf50;
 }
 
-.incompleted {
-  color: #fff;
+.Todo.inprogress {
+  background-color: #fff3cd;
+  color: #e69500;
+  border-left: 5px solid #ff9800;
+}
+
+.Todo.incompleted {
+  background-color: #ffe2e2;
+  color: #d32f2f;
+  border-left: 5px solid #f44336;
+}
+
+/* Checkbox styles */
+.Todo input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+/* Task text */
+.Todo p {
+  flex-grow: 1;
+  margin: 0;
   user-select: none;
-}
-
-.inprogress {
-  color: #ffe600;
-  font-style: italic;
-  user-select: none;
-}
-
-.completed {
-  color: #c5aeff;
-  text-decoration: line-through;
-  user-select: none;
-}
-
-
-.edit-icon,
-.delete-icon {
   cursor: pointer;
 }
 
-.light-mode-btn {
-  color: rgb(236, 236, 236);
-  background-color: rgb(0, 0, 0);
+/* Status icon styles */
+.Todo svg {
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.dark-mode-btn {
-  color: rgb(0, 0, 0);
-  background-color: rgb(207, 200, 200);
+/* Delete icon */
+.delete-icon {
+  color: #888;
+  transition: color 0.2s ease;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
+.delete-icon:hover {
+  color: #f44336;
+}
+
+/* Edit icon */
+.edit-icon {
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  transition: 0.2s ease;
+}
+
+.edit-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Filter buttons */
+.filter-buttons {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter-buttons button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-buttons button:hover {
+  color: white;
+}
+
+.filter-buttons button.all:hover {
+  background-color: #6c8cd5;
+}
+
+.filter-buttons button.incompleted:hover {
+  background-color: #e74c3c;
+}
+
+.filter-buttons button.inprogress:hover {
+  background-color: #f39c12;
+}
+
+.filter-buttons button.completed:hover {
+  background-color: #2ecc71;
+}
+
+.filter-buttons button.active {
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.filter-buttons button.active.all {
+  background-color: #6c8cd5;
+}
+
+.filter-buttons button.active.incompleted {
+  background-color: #e74c3c;
+}
+
+.filter-buttons button.active.inprogress {
+  background-color: #f39c12;
+}
+
+.filter-buttons button.active.completed {
+  background-color: #2ecc71;
+}

@@ -19,7 +19,7 @@ export const TodoWrapperLocalStorage = () => {
         localStorage.setItem('todos', JSON.stringify(newTodos));
     }
 
-    const toggleComplete = id => {
+    const toggleStatus = id => {
         const newTodos = todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo);
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos));
@@ -48,7 +48,7 @@ export const TodoWrapperLocalStorage = () => {
             todo.isEditing ? (
                 <EditTodoForm editTodo={editTask} task={todo} />
             ) : (
-                <Todo task={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} editTodo={editTodo} />
+                <Todo task={todo} key={index} toggleStatus={toggleStatus} deleteTodo={deleteTodo} editTodo={editTodo} />
             )
             
         ))}
